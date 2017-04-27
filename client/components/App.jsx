@@ -30,6 +30,19 @@ export class Header extends React.Component {
 	}
 }
 
+export class Container extends React.Component {
+	render () {
+		return (
+			<div className="grid_container">
+				<div className="parallax col-12"></div>
+				<div className="scroller col-12">
+					
+				</div>
+			</div>
+		);
+	}
+
+}
 
 export class Site extends React.Component {
 	render () {
