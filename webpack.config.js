@@ -2,7 +2,7 @@ module.exports = {
 	// file to be compiled
   output: {
 	// name of the outputted compiled file
-    filename: 'portfolio_react_bundle.js'
+    filename: 'dist/portfolio_react_bundle.js'
   },
   module: {
     loaders: [
