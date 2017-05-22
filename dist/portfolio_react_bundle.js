@@ -58,14 +58,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// object containing user name
-	var person = {
-		firstName: "Jill",
-		lastName: "Robinson"
-	};
-
 	// render element in container
-	_reactDom2.default.render(_react2.default.createElement(_App.Header, null), document.getElementById("container"));
+	_reactDom2.default.render(_react2.default.createElement(_App.Site, null), document.getElementById("container"));
 
 /***/ },
 /* 1 */
@@ -21781,15 +21775,13 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.Button = exports.App = exports.Header = undefined;
+	exports.Site = exports.Contact = exports.ThanksContainer = exports.Project = exports.ProjectContainer = exports.Technologies = exports.Tooltip = exports.Container = exports.Header = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _util = __webpack_require__(182);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21798,8 +21790,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// import { formatName } imports that function from util.js, can add other functions with formatName, getJSON etc.
 
 	var ContactButton = function (_React$Component) {
 		_inherits(ContactButton, _React$Component);
@@ -21856,10 +21846,10 @@
 					_react2.default.createElement(
 						"ul",
 						{ className: "contact_buttons" },
-						_react2.default.createElement(ContactButton, { url: "/static/docs/jillrobinsonresumeApr17.pdf", img: "/static/img/resume.png" }),
+						_react2.default.createElement(ContactButton, { url: "/static/docs/jillrobinsonresumeMay17.pdf", img: "/static/img/resume.png" }),
 						_react2.default.createElement(ContactButton, { url: "mailto:contact@jillcrobinson.com", img: "/static/img/email.png" }),
 						_react2.default.createElement(ContactButton, { url: "https://github.com/wildlingjill", img: "/static/img/github.png" }),
-						_react2.default.createElement(ContactButton, { url: "https://www.youtube.com/channel/UCpzSHDdfhICve3Bxk-Zbc-A", img: "/static/img/youtube.png" }),
+						_react2.default.createElement(ContactButton, { url: "https://www.youtube.com/c/JillRobinson", img: "/static/img/youtube.png" }),
 						_react2.default.createElement(ContactButton, { url: "https://www.linkedin.com/in/jillcrobinson", img: "/static/img/linkedin.png" })
 					)
 				);
@@ -21869,104 +21859,488 @@
 		return Header;
 	}(_react2.default.Component);
 
-	// extends means inherits from React.Component
+	var Container = exports.Container = function (_React$Component3) {
+		_inherits(Container, _React$Component3);
 
+		function Container() {
+			_classCallCheck(this, Container);
 
-	var App = exports.App = function (_React$Component3) {
-		_inherits(App, _React$Component3);
-
-		function App() {
-			_classCallCheck(this, App);
-
-			return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).apply(this, arguments));
 		}
 
-		_createClass(App, [{
+		_createClass(Container, [{
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: "grid_container" },
+					_react2.default.createElement("div", { className: "parallax col-12" }),
 					_react2.default.createElement(
-						"h1",
-						null,
-						"Hello, ",
-						(0, _util.formatName)(this.props.user)
-					),
-					_react2.default.createElement(Button, null)
-				);
-			}
-		}]);
-
-		return App;
-	}(_react2.default.Component);
-
-	var Button = exports.Button = function (_React$Component4) {
-		_inherits(Button, _React$Component4);
-
-		function Button() {
-			_classCallCheck(this, Button);
-
-			var _this4 = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
-			// super calls constructor method on base class (react component)
-
-
-			_this4.state = {};
-			return _this4;
-		}
-
-		// 'this' needs to be kept through to anonymous function that sets state
-		// can do with either bind(this), an arrow function where this refers to parent's this, or by setting a var to this and using the var
-
-		_createClass(Button, [{
-			key: "handleClick",
-			value: function handleClick() {
-				(0, _util.getJSON)().then(function (response) {
-					this.setState({ response: response });
-				}.bind(this));
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(
-						"button",
-						{ onClick: this.handleClick.bind(this) },
-						"Click me for data!"
-					),
-					_react2.default.createElement(
-						"pre",
-						null,
-						JSON.stringify(this.state.response, null, 4)
+						"div",
+						{ className: "scroller col-12" },
+						_react2.default.createElement(
+							"h2",
+							{ className: "flex-h2" },
+							"Hi, I'm ",
+							_react2.default.createElement(
+								"span",
+								{ className: "span" },
+								"Jill"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "flex-p" },
+							_react2.default.createElement(
+								"p",
+								null,
+								"I'm a determined and motivated ",
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"full-stack JavaScript engineer"
+								),
+								" currently living in ",
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"San Jose, CA"
+								),
+								" (but originally from the UK)!"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"I am passionate about learning new technologies, and have a special interest in ",
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"front-end frameworks"
+								),
+								" such as ",
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"React"
+								),
+								" and ",
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"AngularJS"
+								),
+								". I gained experience building in these frameworks during and after attending the Coding Dojo bootcamp in San Jose. I also have experience of working in full stack Python, and iOS."
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								"If you feel like I could be a good fit for your team or just want to find out more, please get in touch at contact@jillcrobinson.com, view my ",
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.linkedin.com/in/jillcrobinson" },
+									"LinkedIn"
+								),
+								" or ",
+								_react2.default.createElement(
+									"a",
+									{ href: "https://github.com/wildlingjill" },
+									"GitHub"
+								),
+								" accounts, or watch my ",
+								_react2.default.createElement(
+									"a",
+									{ href: "https://www.youtube.com/c/JillRobinson" },
+									"JavaScript with Jill"
+								),
+								" YouTube walkthroughs."
+							)
+						),
+						_react2.default.createElement("br", null),
+						_react2.default.createElement(
+							"h3",
+							null,
+							"Skills"
+						),
+						_react2.default.createElement(Technologies, null),
+						_react2.default.createElement(
+							"ul",
+							{ className: "techList" },
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"Platforms: "
+								),
+								" JavaScript/Node.js, Python, Swift, Web & Mobile-Web (HTML5/CSS3)"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"Frameworks: "
+								),
+								" AngularJS, React.js, Ember, Polymer, Pylot MVC, Flask"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"Libraries: "
+								),
+								" jQuery, Bootstrap, Materialize, Socket.IO, Mocha, Chai"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"Servers: "
+								),
+								" Linux, NGINX, Express.js"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"Databases: "
+								),
+								" MySQL, MongoDB/Mongoose"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"Other Technologies: "
+								),
+								" React Native, Xcode, Git/GitHub"
+							)
+						),
+						_react2.default.createElement("br", null),
+						_react2.default.createElement(
+							"h3",
+							null,
+							"Projects"
+						),
+						_react2.default.createElement(ProjectContainer, null),
+						_react2.default.createElement("br", null),
+						_react2.default.createElement(
+							"h3",
+							{ className: "h3" },
+							"JavaScript with Jill"
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "videos" },
+							_react2.default.createElement("iframe", { className: "videoFrame", src: "https://www.youtube.com/embed/K05Ftgvj06U?rel=0", allowFullScreen: true }),
+							_react2.default.createElement("iframe", { className: "videoFrame", src: "https://www.youtube.com/embed/DHoiFbU0Ezk?rel=0", allowFullScreen: true }),
+							_react2.default.createElement("iframe", { className: "videoFrame", src: "https://www.youtube.com/embed/pNvAlEu26k8?rel=0", allowFullScreen: true })
+						),
+						_react2.default.createElement("br", null),
+						_react2.default.createElement(ThanksContainer, null)
 					)
 				);
 			}
 		}]);
 
-		return Button;
+		return Container;
 	}(_react2.default.Component);
 
-/***/ },
-/* 182 */
-/***/ function(module, exports) {
+	var Tooltip = exports.Tooltip = function (_React$Component4) {
+		_inherits(Tooltip, _React$Component4);
 
-	"use strict";
+		function Tooltip() {
+			_classCallCheck(this, Tooltip);
 
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	var formatName = exports.formatName = function formatName(person) {
-		return person.firstName + " " + person.lastName;
-	};
+			return _possibleConstructorReturn(this, (Tooltip.__proto__ || Object.getPrototypeOf(Tooltip)).apply(this, arguments));
+		}
 
-	// fetch only available in newer browsers but can polyfill for older browsers
-	var getJSON = exports.getJSON = function getJSON() {
-		return fetch("/json").then(function (response) {
-			return response.json();
-		});
-	};
+		_createClass(Tooltip, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "tooltip" },
+					_react2.default.createElement("img", { src: this.props.img, width: "60", height: "60" }),
+					_react2.default.createElement(
+						"span",
+						{ className: "tooltiptext" },
+						this.props.name
+					)
+				);
+			}
+		}]);
+
+		return Tooltip;
+	}(_react2.default.Component);
+
+	var Technologies = exports.Technologies = function (_React$Component5) {
+		_inherits(Technologies, _React$Component5);
+
+		function Technologies() {
+			_classCallCheck(this, Technologies);
+
+			return _possibleConstructorReturn(this, (Technologies.__proto__ || Object.getPrototypeOf(Technologies)).apply(this, arguments));
+		}
+
+		_createClass(Technologies, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "technologies" },
+					_react2.default.createElement(Tooltip, { img: "/static/img/javascript.png", name: "JavaScript" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/angular.png", name: "AngularJS" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/mongodb.png", name: "MongoDB" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/node.png", name: "Node.js" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/react.png", name: "React" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/github2.png", name: "Git" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/html5.png", name: "HTML5" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/css3.png", name: "CSS3" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/python.png", name: "Python" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/swift.png", name: "iOS/Swift" }),
+					_react2.default.createElement(Tooltip, { img: "/static/img/mysql.png", name: "MySql" })
+				);
+			}
+		}]);
+
+		return Technologies;
+	}(_react2.default.Component);
+
+	var ProjectContainer = exports.ProjectContainer = function (_React$Component6) {
+		_inherits(ProjectContainer, _React$Component6);
+
+		function ProjectContainer() {
+			_classCallCheck(this, ProjectContainer);
+
+			return _possibleConstructorReturn(this, (ProjectContainer.__proto__ || Object.getPrototypeOf(ProjectContainer)).apply(this, arguments));
+		}
+
+		_createClass(ProjectContainer, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "projectcontainer" },
+					_react2.default.createElement(
+						"div",
+						{ className: "projects" },
+						_react2.default.createElement(
+							"div",
+							{ className: "projects1 projects" },
+							_react2.default.createElement(Project, { url: "https://papirus.jillcrobinson.com", img: "/static/img/papirus.png" }),
+							_react2.default.createElement(Project, { url: "http://colorvert.jillcrobinson.com/", img: "/static/img/colorvert.png" }),
+							_react2.default.createElement(Project, { url: "https://www.youtube.com/watch?v=K05Ftgvj06U", img: "/static/img/directme.png" })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "projects1 descriptions" },
+							_react2.default.createElement(
+								"p",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"Papirus:"
+								),
+								" an API REST endpoint tester built in React, Node.js and Express.js"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"Colorvert:"
+								),
+								" a Hex-RGB converter built with AJAX, Node.js and Mocha"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"DirectMe:"
+								),
+								" Python activities app with Yelp API integration, built in Flask and MySQL"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "projects" },
+						_react2.default.createElement(
+							"div",
+							{ className: "projects2 projects" },
+							_react2.default.createElement(Project, { url: "http://bluesuncorp.co.uk/2048/client/index.html#/", img: "/static/img/2048.png" }),
+							_react2.default.createElement(Project, { url: "https://github.com/wildlingjill/maze_project", img: "/static/img/imaze.png" })
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "projects2 descriptions" },
+							_react2.default.createElement(
+								"p",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"2048:"
+								),
+								" a web version of the number game built in AngularJS, Node.js and Express.js"
+							),
+							_react2.default.createElement(
+								"p",
+								null,
+								_react2.default.createElement(
+									"span",
+									{ className: "span" },
+									"iMaze:"
+								),
+								" interactive marble maze game for iOS built in Swift 2.3 with Core Motion controls"
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return ProjectContainer;
+	}(_react2.default.Component);
+
+	var Project = exports.Project = function (_React$Component7) {
+		_inherits(Project, _React$Component7);
+
+		function Project() {
+			_classCallCheck(this, Project);
+
+			return _possibleConstructorReturn(this, (Project.__proto__ || Object.getPrototypeOf(Project)).apply(this, arguments));
+		}
+
+		_createClass(Project, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"a",
+						{ href: this.props.url },
+						_react2.default.createElement("img", { className: "img", src: this.props.img })
+					)
+				);
+			}
+		}]);
+
+		return Project;
+	}(_react2.default.Component);
+
+	var ThanksContainer = exports.ThanksContainer = function (_React$Component8) {
+		_inherits(ThanksContainer, _React$Component8);
+
+		function ThanksContainer() {
+			_classCallCheck(this, ThanksContainer);
+
+			return _possibleConstructorReturn(this, (ThanksContainer.__proto__ || Object.getPrototypeOf(ThanksContainer)).apply(this, arguments));
+		}
+
+		_createClass(ThanksContainer, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"h3",
+						{ className: "h3" },
+						"Thanks for visiting!"
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "thankscontainer" },
+						_react2.default.createElement("img", { className: "thanksImg", src: "/static/img/me.jpg" }),
+						_react2.default.createElement(
+							"div",
+							{ className: "contactcontainer" },
+							_react2.default.createElement(Contact, { url: "/static/docs/jillrobinsonresumeMay17.pdf", title: "View my resume" }),
+							_react2.default.createElement(Contact, { url: "mailto:contact@jillcrobinson.com", title: "Email me" }),
+							_react2.default.createElement(Contact, { url: "https://github.com/wildlingjill", title: "View my GitHub profile" }),
+							_react2.default.createElement(Contact, { url: "https://www.youtube.com/c/JillRobinson", title: "JavaScript with Jill on YouTube" }),
+							_react2.default.createElement(Contact, { url: "https://www.linkedin.com/in/jillcrobinson", title: "Add me on LinkedIn" })
+						)
+					)
+				);
+			}
+		}]);
+
+		return ThanksContainer;
+	}(_react2.default.Component);
+
+	var Contact = exports.Contact = function (_React$Component9) {
+		_inherits(Contact, _React$Component9);
+
+		function Contact() {
+			_classCallCheck(this, Contact);
+
+			return _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).apply(this, arguments));
+		}
+
+		_createClass(Contact, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"h4",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ href: this.props.url },
+							this.props.title
+						)
+					),
+					_react2.default.createElement("hr", { className: "hr" })
+				);
+			}
+		}]);
+
+		return Contact;
+	}(_react2.default.Component);
+
+	var Site = exports.Site = function (_React$Component10) {
+		_inherits(Site, _React$Component10);
+
+		function Site() {
+			_classCallCheck(this, Site);
+
+			return _possibleConstructorReturn(this, (Site.__proto__ || Object.getPrototypeOf(Site)).apply(this, arguments));
+		}
+
+		_createClass(Site, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(Header, null),
+					_react2.default.createElement(Container, null)
+				);
+			}
+		}]);
+
+		return Site;
+	}(_react2.default.Component);
 
 /***/ }
 /******/ ]);

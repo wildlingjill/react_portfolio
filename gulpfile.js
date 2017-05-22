@@ -12,9 +12,9 @@ gulp.task('lint', function() {
 });
 
 gulp.task('webpack', function() {
-  return gulp.src('./client/react_test.jsx')
+  return gulp.src('./client/index.jsx')
     .pipe(webpack(webpack_config))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('build', ['lint', 'webpack']);
