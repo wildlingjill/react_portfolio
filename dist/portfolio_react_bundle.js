@@ -22138,7 +22138,7 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "projects1 projects" },
-							_react2.default.createElement(Project, { url: "https://papirus.jillcrobinson.com", img: "/static/img/papirus.png" }),
+							_react2.default.createElement(Project, { url: "http://papirus.jillcrobinson.com", img: "/static/img/papirus.png" }),
 							_react2.default.createElement(Project, { url: "http://colorvert.jillcrobinson.com/", img: "/static/img/colorvert.png" }),
 							_react2.default.createElement(Project, { url: "https://www.youtube.com/watch?v=K05Ftgvj06U", img: "/static/img/directme.png" })
 						),
