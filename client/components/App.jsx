@@ -110,7 +110,7 @@ export class ProjectContainer extends React.Component {
 			<div className="projectcontainer">
 				<div className="projects">
 					<div className="projects1 projects">
-						<Project url="https://papirus.jillcrobinson.com" img="/static/img/papirus.png" />
+						<Project url="http://papirus.jillcrobinson.com" img="/static/img/papirus.png" />
 						<Project url="http://colorvert.jillcrobinson.com/" img="/static/img/colorvert.png" />
 						<Project url="https://www.youtube.com/watch?v=K05Ftgvj06U" img="/static/img/directme.png" />
 					</div>
