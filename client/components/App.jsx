@@ -4,7 +4,7 @@ class ContactButton extends React.Component {
 	render(){
 		return (
 			<li>
-				<a href={this.props.url}>
+				<a href={this.props.url} target="_blank" rel="noopener noreferrer">
 					<img src={this.props.img} width="40" height="40"></img>
 				</a>
 			</li>
@@ -19,7 +19,7 @@ export class Header extends React.Component {
 				<h1>Jill Robinson</h1>
 				<h4>JAVASCRIPT DEVELOPER</h4>
 				<ul className="contact_buttons">
-					<ContactButton url="/static/docs/jillrobinsonresumeMay17.pdf" img="/static/img/resume.png" />
+					<ContactButton url="/static/docs/JillRobinsonResumeMar2019.pdf" img="/static/img/resume.png" />
 					<ContactButton url="mailto:contact@jillcrobinson.com" img="/static/img/email.png" />
 					<ContactButton url="https://github.com/wildlingjill" img="/static/img/github.png" />
 					<ContactButton url="https://www.youtube.com/c/JillRobinson" img="/static/img/youtube.png" />
